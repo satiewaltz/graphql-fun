@@ -3,10 +3,11 @@ const axios = require("axios");
 const { 
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLString
+  GraphQLString,
+  GraphQLInt
 } = require('graphql')
 
-// const url = "https://ghibliapi.herokuapp.com";
+const url = "https://ghibliapi.herokuapp.com/films/";
 
 // const x = axios(url)
 // .then(res => console.log(res))
@@ -20,7 +21,8 @@ const FlimType = new GraphQLObjectType ({
   description: '...',
   fields: () => ({
     title: {
-      type: GraphQLString
+      type: GraphQLString,
+      resolve: json => json.title
     }
   })
 })
@@ -33,18 +35,11 @@ module.exports = new GraphQLSchema({
       flims: {
         type: FlimType,
         args: {
-          id: { type: GraphQLString }
+          id: { type: GraphQLInt }
         },
-        resolve: (root, args) => axios("https://ghibliapi.herokuapp.com", {
-          parems: {
-            
-          }
-        })
-        .then(res => console.log(res))
-        .catch(err =>  {
-          console.log("bad")
-          console.log(err)
-        })
+        resolve: (root, args) => axios(url)
+          .then(res => res.data[args.id])
+          .catch(err => err)
       }
     })
   })
