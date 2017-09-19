@@ -4,19 +4,13 @@ const {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString,
-  GraphQLInt
+  GraphQLInt,
+  GraphQLList
 } = require('graphql')
 
 const url = "https://ghibliapi.herokuapp.com/films/";
 
-// const x = axios(url)
-// .then(res => console.log(res))
-// .catch(err =>  {
-//   console.log("bad")
-//   console.log(err)
-// });
-
-const FlimType = new GraphQLObjectType ({
+const FilmType = new GraphQLObjectType ({
   name: 'Flim',
   description: '...',
   fields: () => ({
@@ -33,12 +27,18 @@ module.exports = new GraphQLSchema({
     description: '...',
     fields: () => ({
       flims: {
-        type: FlimType,
+        type: new GraphQLList(FilmType),
         args: {
           id: { type: GraphQLInt }
         },
         resolve: (root, args) => axios(url)
-          .then(res => res.data[args.id])
+          .then(res => {            
+            if (typeof args.id === "undefined") {
+              return res.data;
+            } else {
+              return res.data[args.id];
+            }
+          })
           .catch(err => err)
       }
     })
