@@ -1,0 +1,14 @@
+{
+  "name": "graphql-fun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:satiewaltz/graphql-fun.git",
+  "author": "Dave Barthly <davebarthly@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "express": "^4.15.4",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.3"
+  }
+}
