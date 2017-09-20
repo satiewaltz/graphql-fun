@@ -1,10 +1,26 @@
 # GraphQL Ghibi
 > GraphQL Layer for the [Studio Ghibi API](https://ghibliapi.herokuapp.com).
 
-Example Queries:
+## Installing / Getting started
+
+Just clone, install, and start!
+
+```shell
+git clone https://github.com/satiewaltz/graphql-ghibi
+cd graphql-ghibi/
+yarn install
+yarn start
+```
+
+Open `localhost:4000` to perform GraphQL Queries.
+
+---
+
+*Example Queries:*
+
 ```graphql
 {
-	films {
+  films {
 		title,
     description
   }
@@ -18,32 +34,19 @@ Example Queries:
 }
 
 {
-	film(id: 1) {
+	film(id: 3) {
 		title,
     description
   }
 }
 
 {
-  singleSpecies(id: 1) {
+  singleSpecies(id: 2) {
 		name,
     classification
   }
 }
 ```
-
-## Installing / Getting started
-
-Just clone, install, and start!
-
-```shell
-git clone https://github.com/satiewaltz/graphql-ghibi
-cd graphql-ghibi/
-yarn install
-yarn start
-```
-
-Open `localhost:4000` to perform GraphQL Queries.
 
 ## Licensing
 
