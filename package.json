@@ -2,7 +2,7 @@
   "name": "graphql-fun",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:satiewaltz/graphql-fun.git",
+  "repository": "git@github.com:satiewaltz/graphql-ghibi.git",
   "author": "Dave Barthly <davebarthly@gmail.com>",
   "license": "MIT",
   "dependencies": {
