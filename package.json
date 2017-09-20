@@ -5,6 +5,7 @@
   "repository": "git@github.com:satiewaltz/graphql-ghibi.git",
   "author": "Dave Barthly <davebarthly@gmail.com>",
   "license": "MIT",
+  "scripts": "node server.js",
   "dependencies": {
     "axios": "^0.16.2",
     "express": "^4.15.4",
