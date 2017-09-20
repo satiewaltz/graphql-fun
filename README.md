@@ -21,28 +21,28 @@ Open `localhost:4000` to perform GraphQL Queries.
 ```graphql
 {
   films {
-		title,
+    title,
     description
   }
 }
 
 {
-	species {
-		name,
+  species {
+    name,
     classification
   }
 }
 
 {
-	film(id: 3) {
-		title,
+  film(id: 3) {
+    title,
     description
   }
 }
 
 {
   singleSpecies(id: 2) {
-		name,
+    name,
     classification
   }
 }
